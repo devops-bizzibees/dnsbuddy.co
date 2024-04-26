@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
+      suppressHydrationWarning={true}
       className={`${domine.variable} ${openSans.variable}`}
     >
       <head>
@@ -44,8 +44,8 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          enableSystem={true}
+          disableTransitionOnChange={true}
         >
           <Layout>{children}</Layout>
         </ThemeProvider>

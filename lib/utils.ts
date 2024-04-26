@@ -9,7 +9,7 @@ export const isValidUrl = (url: string): boolean => {
   try {
     new URL(url);
     return true;
-  } catch (e) {
+  } catch (_e) {
     return false;
   }
 };
@@ -67,5 +67,5 @@ export const isValidASN = (asn: string): boolean => {
 };
 
 export const timeUnix = (): number => {
-  return parseInt((new Date().getTime() / 1000).toFixed(0));
+  return Number.parseInt((new Date().getTime() / 1000).toFixed(0));
 };

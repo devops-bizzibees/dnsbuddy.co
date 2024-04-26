@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["components/ui/*", "components/tables/data-table.tsx"]
+    "ignore": []
   },
   "organizeImports": {
     "enabled": true
@@ -20,15 +20,26 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "all": true,
       "complexity": {
         "noBannedTypes": "off"
       },
+      "style": {
+        "noDefaultExport": "off",
+        "noNamespaceImport": "off",
+        "useNamingConvention": {
+          "level": "off",
+          "options": {
+            "enumMemberCase": "CONSTANT_CASE",
+            "strictCase": true
+          }
+        }
+      },
       "nursery": {
-        "useImportType": "error",
-        "useExportType": "error"
+        "recommended": true
       }
-    }
+    },
+    "ignore": ["tailwind.config.ts", "/tests/*"]
   },
   "json": {
     "parser": {
