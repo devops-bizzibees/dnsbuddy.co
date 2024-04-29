@@ -1,13 +1,14 @@
 import type { parsedMxRecords } from "@/types/parse";
 
 export function parseMxRecords(records: string[]): parsedMxRecords[] {
-  const parsedRecords = records.map((record) => {
-    const [priorityStr, value] = record.split(" ");
-    const priority = Number.parseInt(priorityStr);
-    return { priority, value };
-  });
-  parsedRecords.sort((a, b) => a.priority - b.priority);
-  return parsedRecords;
+  return records
+    .map((record) => {
+      const [priorityStr, value] = record.split(" ");
+      const priority = Number.parseInt(priorityStr);
+      return { priority, value };
+    })
+    .filter((record) => record.value !== undefined)
+    .sort((a, b) => a.priority - b.priority);
 }
 
 export function parseSpfRecords(records: string[]): string[] {

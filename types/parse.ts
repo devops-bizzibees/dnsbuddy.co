@@ -72,6 +72,10 @@ export enum TxtTitle {
   firebase = "Firebase",
   validity = "Validity",
   yandex = "Yandex",
+  godaddy = "GoDaddy",
+  paddle = "Paddle",
+  amazonses = "Amazon",
+  prowly = "Prowly",
 }
 
 export enum TxtImage {
@@ -142,4 +146,8 @@ export enum TxtImage {
   firebase = "google",
   validity = "validity",
   yandex = "yandex",
+  godaddy = "godaddy",
+  paddle = "paddle",
+  amazonses = "amazon",
+  prowly = "prowly",
 }
