@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
-    const { query, type } = await request.json();
+    const { query } = await request.json();
     const data = await lookup(query);
     return NextResponse.json(whoisStringToJson(data));
   } catch (error) {

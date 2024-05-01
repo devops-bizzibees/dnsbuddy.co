@@ -1,4 +1,3 @@
-import { ProviderToLabelMapping } from "@/constants/api";
 import { exampleDNSResponseItem } from "@/tests/mock/api";
 import { CommonRecordTypes } from "@/types/record-types";
 import { type Page, expect, test } from "@playwright/test";

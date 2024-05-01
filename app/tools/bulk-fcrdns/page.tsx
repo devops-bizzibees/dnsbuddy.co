@@ -1,7 +1,7 @@
 import { BulkFCrDNSForm } from "@/components/forms/forms";
 import { buildMetadata } from "@/components/metadata";
 
-export async function generateMetadata() {
+export function generateMetadata() {
   return buildMetadata({
     title:
       "Bulk Forward Confirmation reverse DNS (FCrDNS) Lookup | DNSBuddy.co",

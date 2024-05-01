@@ -1,6 +1,5 @@
 import {
   bulkLengthCheck,
-  isValidASN,
   isValidDomain,
   isValidIpAddressV4,
   isValidIpAddressV6,

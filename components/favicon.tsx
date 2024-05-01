@@ -7,7 +7,9 @@ export default function FavIcon({ domain }: { domain: string }) {
   const [logoError, setLogoError] = useState(false);
   return (
     <>
-      {!logoError ? (
+      {logoError ? (
+        <Link2Icon className="w-4 h-4 mr-1" />
+      ) : (
         <Image
           alt={`${domain} icon`}
           width={12}
@@ -18,8 +20,6 @@ export default function FavIcon({ domain }: { domain: string }) {
           className="w-4 h-4 mr-1"
           onError={() => setLogoError(true)}
         />
-      ) : (
-        <Link2Icon className="w-4 h-4 mr-1" />
       )}
     </>
   );

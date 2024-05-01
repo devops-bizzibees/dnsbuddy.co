@@ -2,7 +2,7 @@ import "@/css/global.css";
 
 import { Layout } from "@/components/layout";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import { AxiomWebVitals } from "next-axiom";
 import { Domine, Open_Sans } from "next/font/google";
 
 const domine = Domine({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
+      suppressHydrationWarning={true}
       className={`${domine.variable} ${openSans.variable}`}
     >
       <head>
@@ -44,9 +44,10 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          enableSystem={true}
+          disableTransitionOnChange={true}
         >
+          <AxiomWebVitals />
           <Layout>{children}</Layout>
         </ThemeProvider>
       </body>

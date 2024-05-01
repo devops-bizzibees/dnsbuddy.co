@@ -859,7 +859,7 @@ export function DnsForm({ domain }: { domain: string }) {
     domain: string | undefined;
     dns_provider: string | undefined;
   } | null>(null);
-  const dns_provider =
+  const dnsProvider =
     paramsDnsProvider &&
     Object.keys(ProviderToLabelMapping).includes(paramsDnsProvider)
       ? paramsDnsProvider
@@ -869,28 +869,28 @@ export function DnsForm({ domain }: { domain: string }) {
     resolver: zodResolver(dnsSchema),
     defaultValues: {
       domain: domain,
-      dns_provider: dns_provider,
+      dns_provider: dnsProvider,
     },
     mode: "onChange",
   });
 
   useEffect(() => {
-    if (dns_provider !== paramsDnsProvider) {
-      router.push(`/tools/domain/${domain}?dns_provider=${dns_provider}`);
+    if (dnsProvider !== paramsDnsProvider) {
+      router.push(`/tools/domain/${domain}?dns_provider=${dnsProvider}`);
       return;
     }
 
     if (
       domain &&
-      dns_provider &&
+      dnsProvider &&
       (!lastSubmitted ||
         lastSubmitted.domain !== domain ||
-        lastSubmitted.dns_provider !== dns_provider)
+        lastSubmitted.dns_provider !== dnsProvider)
     ) {
       // Checks if the form is valid and if not redirects to the dns-lookup homepage.
       const result = dnsSchema.safeParse({
         domain: domain,
-        dns_provider: dns_provider,
+        dns_provider: dnsProvider,
       });
 
       if (!result.success) {
@@ -899,7 +899,7 @@ export function DnsForm({ domain }: { domain: string }) {
       onSubmit(result.data);
       setLastSubmitted(result.data);
     }
-  }, [domain, dns_provider, lastSubmitted, paramsDnsProvider, router.push]);
+  }, [domain, dnsProvider, lastSubmitted, paramsDnsProvider, router.push]);
 
   async function onSubmit(values: z.infer<typeof dnsSchema>) {
     if (response !== undefined) {
@@ -909,7 +909,7 @@ export function DnsForm({ domain }: { domain: string }) {
 
     startTransition(async () => {
       if (
-        values.dns_provider.toLowerCase() !== dns_provider ||
+        values.dns_provider.toLowerCase() !== dnsProvider ||
         values.domain !== domain
       ) {
         router.push(

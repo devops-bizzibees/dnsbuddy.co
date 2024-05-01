@@ -3,6 +3,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 const { withSentryConfig } = require("@sentry/nextjs");
+const { withAxiom } = require("next-axiom");
 
 const nextConfig = {
   trailingSlash: true,
@@ -34,7 +35,6 @@ const SentryWebpackPluginOptions = {
   authToken: process.env.SENTRY_AUTH_TOKEN,
 };
 
-module.exports = withSentryConfig(
-  withBundleAnalyzer(nextConfig),
-  SentryWebpackPluginOptions,
+module.exports = withAxiom(
+  withSentryConfig(withBundleAnalyzer(nextConfig), SentryWebpackPluginOptions),
 );

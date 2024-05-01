@@ -2,7 +2,7 @@ import { DomainForm } from "@/components/forms/forms";
 import { buildMetadata } from "@/components/metadata";
 import Link from "next/link";
 
-export async function generateMetadata() {
+export function generateMetadata() {
   return buildMetadata({
     title: "DnsBuddy | Index",
     description: "An opensourced DNS Swiss Army Knife.",

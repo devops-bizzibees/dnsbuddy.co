@@ -22,11 +22,11 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: "daily",
   priority: 0.7,
-  additionalPaths: async () => {
-    const ADDITIONAL_PATHS = [];
+  additionalPaths: () => {
+    const additionalPaths = [];
 
     for (const recordType of Object.keys(CommonRecordTypes)) {
-      ADDITIONAL_PATHS.push({
+      additionalPaths.push({
         loc: `/tools/dns-records/${recordType}/`,
         changefreq: "daily",
         priority: 0.7,
@@ -35,7 +35,7 @@ module.exports = {
     }
 
     for (const types of Object.keys(WhoIsTypes)) {
-      ADDITIONAL_PATHS.push({
+      additionalPaths.push({
         loc: `/tools/whois/${types}/`,
         changefreq: "daily",
         priority: 0.7,
@@ -43,6 +43,6 @@ module.exports = {
       });
     }
 
-    return ADDITIONAL_PATHS;
+    return additionalPaths;
   },
 };

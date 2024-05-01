@@ -109,7 +109,7 @@ export const MxRecordColumnDef: ExtendedColumnDef<parsedMxRecords>[] = [
       return <DataTableColumnHeader column={column} title="Priority" />;
     },
     cell: ({ row }) => {
-      if (parseInt(row.id) === 0) {
+      if (Number.parseInt(row.id) === 0) {
         return (
           <>
             {row.getValue("priority")}{" "}
