@@ -57,7 +57,8 @@ export const isValidIpAddressV4 = (ipAddress: string): boolean => {
 };
 
 export const isValidIpAddressV6 = (ipAddress: string): boolean => {
-  const ipRegexV6 = /^([0-9a-fA-F]{1,4}:){7}([0-9a-fA-F]{1,4})$/;
+  // Updated to this from Regexr: regexr.com/3bu43
+  const ipRegexV6 = /^(([a-fA-F0-9]{1,4}|):){1,7}([a-fA-F0-9]{1,4}|:)$/;
   return ipRegexV6.test(ipAddress);
 };
 
