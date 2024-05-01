@@ -76,7 +76,7 @@ export enum TxtTitle {
   paddle = "Paddle",
   amazonses = "Amazon",
   prowly = "Prowly",
-  hubspot = 'Hubspot'
+  hubspot = "Hubspot",
 }
 
 export enum TxtImage {
@@ -151,5 +151,5 @@ export enum TxtImage {
   paddle = "paddle",
   amazonses = "amazon",
   prowly = "prowly",
-  hubspot = 'hubspot'
+  hubspot = "hubspot",
 }
