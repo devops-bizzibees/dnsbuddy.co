@@ -27,7 +27,7 @@ module.exports = {
 
     for (const recordType of Object.keys(CommonRecordTypes)) {
       additionalPaths.push({
-        loc: `/tools/dns-records/${recordType}/`,
+        loc: `/tools/dns-lookup/${recordType}/`,
         changefreq: "daily",
         priority: 0.7,
         lastmod: new Date().toISOString(),
