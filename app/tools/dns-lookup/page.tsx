@@ -3,9 +3,9 @@ import { buildMetadata } from "@/components/metadata";
 
 export async function generateMetadata() {
   return buildMetadata({
-    title: "WHOIS Lookup | DNSBuddy.co",
+    title: "DNS Record Lookup | DNSBuddy.co",
     description:
-      "The WHOIS lookup tool allows you to query the WHOIS database for information about a domain name or IP address.",
+      "Explore information across any domains or IP addresses (IPv4 or IPv6) using our versatile tool. We currently support a wide range of DNS record types, including TXT, CNAME, MX, NS, A, AAAA, PTR, SOA, and more. We will then lookup the designated record across 9 different DNS Providers, and locations.",
     url: "https://DnsBuddy.co/tools/dns-lookup/",
     slogan: "DNS Records for TXT, MX, A, CNAME, NS, and more.",
   });
