@@ -6,8 +6,8 @@ export async function generateMetadata({
   params,
 }: { params: { domain: string } }) {
   return buildMetadata({
-    title: `${params.domain} - DnsBuddy.co`,
-    description: "An opensourced DNS Swiss Army Knife.",
+    title: `${params.domain} Explorer - DnsBuddy.co`,
+    description: `See a wide range of data about ${params.domain}. Including TXT Records, MX Records, NS Records, A Records, and more.`,
     url: `https://DnsBuddy.co/domain/${params.domain}`,
     slogan: `${params.domain} - DnsBuddy.co`,
   });

@@ -48,7 +48,7 @@ export const stringToList = (string: string): string[] => {
 
 export const bulkLengthCheck = (string: string): boolean => {
   const list = stringToList(string);
-  return list.length <= 100;
+  return list.length <= 10_000;
 };
 
 export const isValidIpAddressV4 = (ipAddress: string): boolean => {
