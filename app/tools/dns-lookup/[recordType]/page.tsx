@@ -7,9 +7,8 @@ export async function generateMetadata({
   params,
 }: { params: { recordType?: string; query?: string } }) {
   return buildMetadata({
-    title:`Lookup ${params.recordType?.toUpperCase()} Records | DNSBuddy.co`,
-    description:
-      `Lookup the ${params.recordType?.toUpperCase()} Record for any Domain or IP Address (IPv4 or IPv6) across a wide range of DNS Providers and locations.`,
+    title: `Lookup ${params.recordType?.toUpperCase()} Records | DNSBuddy.co`,
+    description: `Lookup the ${params.recordType?.toUpperCase()} Record for any Domain or IP Address (IPv4 or IPv6) across a wide range of DNS Providers and locations.`,
     url: `https://DnsBuddy.co/tools/dns-lookup/${params.recordType}/`,
     slogan: `Lookup a ${params.recordType?.toUpperCase()} record..`,
   });

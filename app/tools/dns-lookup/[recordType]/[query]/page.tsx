@@ -7,9 +7,12 @@ export async function generateMetadata({
   params,
 }: { params: { recordType?: string; query?: string } }) {
   return buildMetadata({
-    title: `${params.recordType?.toUpperCase()} Records for ${params.query} | DNSBuddy.co`,
-    description:
-       `Lookup the ${params.recordType?.toUpperCase()} Record for ${params.query} across a wide range of DNS Providers and locations.`,
+    title: `${params.recordType?.toUpperCase()} Records for ${
+      params.query
+    } | DNSBuddy.co`,
+    description: `Lookup the ${params.recordType?.toUpperCase()} Record for ${
+      params.query
+    } across a wide range of DNS Providers and locations.`,
     url: `https://DnsBuddy.co/tools/dns-lookup/${params.recordType}/${params.query}`,
     slogan: `Lookup a ${params.recordType?.toUpperCase()} record for ${
       params.query
